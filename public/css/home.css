@@ -1,0 +1,84 @@
+body{
+	background: linear-gradient(to bottom right, #1D0736, #480054);
+}
+.container{
+/*	border: solid 2px black;*/
+	color: white;
+}
+.homeTop{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+/*	background-color: red;*/
+	width: 100%;
+}
+.homeLogoWrapper{
+	width: 270px;
+	height: 270px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 10px;
+	padding-top: 10px;
+	padding-bottom: 70px;
+	background-color: white;
+	border-radius: 10px 10px 70% 70%;
+	object-fit: cover;
+/*	margin: 100px 0;*/
+}
+img{
+	transform: perspective(400px) rotateY(90deg)
+}
+img.homeLogo{
+	width: 210px;
+	height: 210px;
+	margin-top: 10px;
+	transform: rotateY(180deg);
+}
+.title{
+	width: 70%;
+	margin-right: 15px;
+}
+.typewriter{
+	display: block;
+	width: fit-content;
+}
+.typewriter h1, .typewriter h3{
+width: fit-content;
+  word-wrap: break-word;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(40, end),
+    blink-caret .75s step-end infinite;		
+  font-weight: bold;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+.dateTime{
+	font-size: 20px;
+	letter-spacing: 10px;
+}
+
+
+@media only screen and (max-width: 720px) {
+  .homeLogoWrapper{
+    display: none;
+  }
+  .homeLogo{
+  	display: none;
+  }
+}

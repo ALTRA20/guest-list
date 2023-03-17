@@ -1,0 +1,81 @@
+.homeBody{
+	height: 100vh;
+/*	position: relative;*/
+}
+a{
+	color: inherit;
+}
+.containerTop{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 10px;
+}
+.optionIcon{
+	padding: 4px;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 57px;
+}
+.optionIcon:hover{
+	background-color: #f1f1f1;
+}
+
+
+.eksporIcon{
+	padding: 4px;
+	border-radius: 50%;
+	cursor: pointer;
+/*	font-size: 57px;*/
+}
+.eksporIcon:hover{
+	background-color: #f1f1f1;
+}
+.optionCard{
+	position: fixed;
+	border: solid 2px black;
+/*	width: 200px;*/
+	background-color: white;
+	right: 30px;
+	top: 60px;
+	padding: 15px;
+}
+.eksporCard{
+	border: solid 2px black;
+	position: fixed;
+	background-color: white;
+	right: 30px;
+	top: 90px;
+	padding: 15px;
+}
+ul{
+	list-style: none;
+	padding: 0;
+
+}
+.eksporCardListItem{
+	text-align: center;
+	cursor: pointer;
+	border-bottom: solid 2px black;
+	margin-bottom: 7px;
+}
+.closeEksport{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+}
+.optionCardListItem{
+	margin-left: 20px;
+}
+.btnAdd{
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	background-color: #eeeeee;
+	cursor: pointer;
+}
+.tdOpsi{
+	display: flex;
+	justify-content: space-evenly;
+}
