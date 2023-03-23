@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{$title}}</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+@extends('layouts.app')
 	<link rel="stylesheet" href="{{ asset('css/daftarTamu.css') }}">
-	
-</head>
-<body class="homeBody">
+@section('content')
+<div class="homeBody">
 	@include('components.nav')
 	<span id="modalAddData">
 		<span class="btnAdd border border-dark rounded-circle p-3 px-4"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addData">+</span>
@@ -25,12 +18,12 @@
 		      <div class="modal-body">
 		          <div class="mb-3">
 				    <label for="nama" class="form-label">Nama</label>
-				    <input type="text" class="form-control" id="nama" aria-describedby="namaHelp" name="nama">
+				    <input type="text" class="form-control" id="nama" aria-describedby="namaHelp" name="nama" autocomplete="off">
 				    <div id="namaHelp" class="form-text">Diharuskan pakai nama lengkap</div>
 				  </div>
 		          <div class="mb-3">
 				    <label for="keperluan" class="form-label">Keperluan</label>
-				    <input type="text" class="form-control" id="keperluan" aria-describedby="keperluanHelp" name="keperluan">
+				    <input type="text" class="form-control" id="keperluan" aria-describedby="keperluanHelp" name="keperluan" autocomplete="off">
 				  </div>
 		          <div class="mb-3">
 				    <label for="asal" class="form-label">Asal</label>
@@ -64,16 +57,16 @@
 				  <input type="hidden" class="form-control" id="modalId" aria-describedby="namaHelp" name="id" >
 		          <div class="mb-3">
 				    <label for="nama" class="form-label">Nama</label>
-				    <input type="text" class="form-control" id="modalNama" aria-describedby="namaHelp" name="name" >
+				    <input type="text" class="form-control" id="modalNama" aria-describedby="namaHelp" name="name" autocomplete="off">
 				    <div id="namaHelp" class="form-text">Diharuskan pakai nama lengkap</div>
 				  </div>
 		          <div class="mb-3">
 				    <label for="keperluan" class="form-label">Keperluan</label>
-				    <input type="text" class="form-control" id="modalKeperluan" aria-describedby="keperluanHelp" name="keperluan">
+				    <input type="text" class="form-control" id="modalKeperluan" aria-describedby="keperluanHelp" name="keperluan" autocomplete="off">
 				  </div>
 		          <div class="mb-3">
 				    <label for="asal" class="form-label">Asal</label>
-				    <input type="text" class="form-control" id="modalAsal" aria-describedby="asalHelp" name="asal">
+				    <input type="text" class="form-control" id="modalAsal" aria-describedby="asalHelp" name="asal" autocomplete="off">
 				    <div id="asalHelp" class="form-text">Dari mana anda berasal (alamat sekolah/perusahaan/rumah)</div>
 				  </div>
 		      </div>
@@ -92,7 +85,7 @@
 			<h2>Daftar Buku Tamu</h2>
 			<form class="d-flex" role="search" action="{{ route('bukutamu.search') }}" method="POST">
 				@csrf
-		        <input class="form-control me-2" type="text" name="query" placeholder="Search" aria-label="Search">
+		        <input class="form-control me-2" type="text" name="query" placeholder="Masukkan nama" aria-label="Search" autocomplete="off">
 		        <button class="btn btn-outline-success" type="submit">Search</button>
 		      </form>
 			<span>
@@ -127,11 +120,11 @@
 			<?php $no=1; ?>
 			@foreach ($visitors as $visitor)
 		    <tr>
-		      <td>{{$no++}}</td>
-		      <td>{{ $visitor->name }}</td>
-		      <td>{{ $visitor->origin }}</td>
-		      <td>{{ $visitor->necessity }}</td>
-		      <td>{{ $visitor->created_at }}</td>
+		      <td id="no">{{$no++}}</td>
+		      <td id="name">{{ $visitor->name }}</td>
+		      <td id="origin">{{ $visitor->origin }}</td>
+		      <td id="necessity">{{ $visitor->necessity }}</td>
+		      <td id="createdAt">{{ $visitor->created_at }}</td>
 		      <td class="tdOpsi">
 		      	<span class="btn btn-primary btn-edit" type="button" data-id="{{ $visitor->id }}" data-name="{{ $visitor->name }}" data-origin="{{ $visitor->origin }}" data-necessity="{{ $visitor->necessity }}" data-bs-toggle="modal" data-bs-target="#editData" onclick="addModalValue(this)">Edit</span>
 		      	<form action="{{ route('bukutamu.delete', $visitor->id) }}" method="POST">
@@ -170,7 +163,4 @@
 	}
 
 </script>
-
-
-</body>
-</html>
+</div>

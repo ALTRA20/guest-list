@@ -75,7 +75,18 @@ ul{
 	background-color: #eeeeee;
 	cursor: pointer;
 }
+td#name{
+	word-wrap: break-word;
+	max-width: 200px;
+}
+td#necessity{
+	word-wrap: break-word;
+	max-width: 250px;
+}
 .tdOpsi{
 	display: flex;
 	justify-content: space-evenly;
+}
+.btn-edit{
+	height: fit-content;
 }

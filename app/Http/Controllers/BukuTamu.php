@@ -14,7 +14,9 @@ class BukuTamu extends BaseController
 
 	public function index()
 	{
-	    $visitors = BukuTamuModel::paginate(5);
+		$today = date("Y-m-d");
+		$visitors = BukuTamuModel::orderBy('created_at', 'desc')->paginate(5);
+
 	    // dd($users);
 	    return view('daftarTamu', $result=[
             'title' => 'DaftarTamu',

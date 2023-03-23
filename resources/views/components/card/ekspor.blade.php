@@ -4,6 +4,9 @@
 }
 .cardEksporFormList{
   display: block;
+  cursor: pointer;
+  width: fit-content;
+/*  padding: 0 5px;*/
 }
 .cardEksporFormListLogo{
   width: 60px;
