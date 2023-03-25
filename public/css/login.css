@@ -3,6 +3,10 @@ ul{
 	margin: 0!important;
 	list-style: none;
 }
+a{
+	text-decoration: none!important;
+	color: white!important;
+}
 .alert-danger{
 	position: fixed!important;
 	bottom: 25px;
@@ -54,4 +58,7 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #FF8C00;
+}
+.footer{
+
 }

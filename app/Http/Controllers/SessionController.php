@@ -32,7 +32,7 @@ class SessionController extends Controller
         ];
 
         if (Auth::attempt($infoLogin)) {
-            return "succes";
+            return redirect('bukutamu.index');
         }else{
             return redirect('sesi')->withErrors('Username atau password yang anda masukkan salah');
         }
