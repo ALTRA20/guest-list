@@ -35,6 +35,7 @@ Route::get('/help', [Pages::class, 'help'])->name('pages.help');
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/registering', [RegisterController::class, 'register'])->name('registering');
 
-Route::get('/sesi', [SessionController::class, 'index'])->name('sesi');
+Route::get('/login', [SessionController::class, 'index'])->name('sesi');
 Route::post('/sesi/login', [SessionController::class, 'login'])->name('sesiLogin');
  
+Route::get('/logout', [SessionController::class, 'logout'])->name('logout');

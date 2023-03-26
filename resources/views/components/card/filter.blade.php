@@ -5,7 +5,7 @@
 .cardFilterFormList{
   display: block;
 }
-label{
+label.filterLabel{
   display: block;
 }
 </style>
@@ -20,15 +20,15 @@ label{
               <span class="">Urut Berdasarkan</span>
               <form action="{{ route('post.sort.year') }}" method="POST">
                 @csrf
-                <label for="name">
+                <label for="name" class="filterLabel">
                   <input type="radio" name="filter" id="name" value="name">
                   nama
                 </label>
-                <label for="oldest">
+                <label for="oldest" class="filterLabel">
                   <input type="radio" name="filter" id="oldest" value="oldest">
                   terlama
                 </label>
-                <label for="recently">
+                <label for="recently" class="filterLabel">
                   <input type="radio" name="filter" id="recently" value="recently">
                   terbaru
                 </label>

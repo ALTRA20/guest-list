@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+@extends('layouts.app')
+
 	<style>
 		form {
 		  display: flex;
@@ -54,9 +50,8 @@
 		}
 
 	</style>
-</head>
-<body>
-		@include('components.nav')
+@section('content')
+		@include('components.nav1')
 	<section class="container d-flex justify-content-center">
 		<form method="POST" action="{{ route('registering') }}" class="card p-5" style="width:fit-content;">
 		    @csrf
@@ -82,6 +77,4 @@
 		    </div>
 		</form>
 	</section>
-</body>
-</html>
-
+@endSection

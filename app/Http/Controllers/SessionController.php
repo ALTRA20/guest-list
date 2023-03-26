@@ -32,9 +32,14 @@ class SessionController extends Controller
         ];
 
         if (Auth::attempt($infoLogin)) {
-            return redirect('bukutamu.index');
+            return redirect('data');
         }else{
-            return redirect('sesi')->withErrors('Username atau password yang anda masukkan salah');
+            return redirect('login')->withErrors('Username atau password yang anda masukkan salah');
         }
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
     }
 }

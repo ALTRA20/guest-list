@@ -2,7 +2,7 @@
 	<link rel="stylesheet" href="{{ asset('css/daftarTamu.css') }}">
 @section('content')
 <div class="homeBody">
-	@include('components.nav')
+	@include('components.nav2')
 	<span id="modalAddData">
 		<span class="btnAdd border border-dark rounded-circle p-3 px-4"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addData">+</span>
 		<!-- Modal -->
